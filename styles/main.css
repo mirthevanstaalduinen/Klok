@@ -1,0 +1,292 @@
+/*Opmaak html die ervoor zorgt dat achtergrond-afbeeldingen juiste hoogte en breedte krijgen*/
+html {
+	height: 100%;
+}
+
+/*Opmaak body die ervoor zorgt dat achtergrond-afbeeldingen juiste hoogte en breedte krijgen*/
+body {
+	min-height: 100%;
+}
+
+/*Opmaak achtergrond-afbeeldingen */ 
+/*Tijdzone 6h-12h*/
+body.morning {
+  	background-image: url("morning.jpeg");
+  	background-repeat: no-repeat;
+  	background-size: cover
+}
+
+/*Tijdzone 12h-17h*/
+body.afternoon {
+	background-image: url("afternoon.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/*Tijdzone 17h-24h*/
+body.evening {
+	background-image: url("evening.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/*Tijdzone 0h-5h*/
+body.night {
+  	background-image: url("night.jpeg");
+  	background-repeat: no-repeat;
+  	background-size: cover;
+}
+
+/*Opmaak menubalk*/
+#menu {
+	position: fixed;
+	background-color: black;
+	z-index: 1;
+	margin-left: -20px;
+	margin-top: -10px;
+}
+
+/*In de container zitten de klok en het onderschrift van de klok*/ 
+.container {
+	margin: 0;
+	display: flex;
+	flex-wrap: wrap;
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    margin-right: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+/*Opmaak text (onderschrift van de klok) */ 
+#text {
+	font-family: Montserrat;
+	font-weight: bold;
+	font-size: 3vw;
+	position: relative;
+	color: white;
+}
+
+/*Opmaak klok*/
+#time {
+	display: block;
+	position: relative;
+	text-align: center;
+	font-family: Montserrat;
+	font-weight: bold;
+	color: white;
+	position: relative;
+	font-size: 9vw;
+	z-index: 1;
+}
+
+/*Opmaak opkomende zon in tijdzone 6h-12h*/
+#sun { 
+  position: absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	margin: auto;  
+	width:70px;
+	height:70px;
+	border-radius:50%;	
+	background:white;
+	opacity:0.9;			
+	box-shadow: 0px 0px 40px 15px white;  
+}
+
+.ray_box /*Verzameling aan stralen om de zon*/ {
+  position: absolute;
+  margin: auto;
+	top:0px;
+	left:0;
+	right:0;
+	bottom:0;	
+  width:70px;  
+  -webkit-animation: ray_anim 120s linear infinite;
+  animation: ray_anim 120s linear infinite;
+}
+
+.ray /* Ray geven de stralen om de zon aan*/ {  
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
+	background: linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%); 
+    margin-left:10px;
+    border-radius:80% 80% 0 0;
+    position:absolute;
+    opacity:0.1;
+}
+
+.ray1 /* Ray geven de stralen om de zon aan*/{    
+    height:170px;
+    width:30px;
+   -webkit-transform: rotate(180deg);
+    top:-175px;
+    left: 15px;
+}
+.ray2 /* Ray geven de stralen om de zon aan*/{
+    height:100px;
+    width:8px;
+   -webkit-transform: rotate(220deg);
+    top:-90px;
+    left: 75px;
+}
+.ray3 /* Ray geven de stralen om de zon aan*/{
+    height:170px;
+    width:50px;
+   -webkit-transform: rotate(250deg);
+    top:-80px;
+    left: 100px;
+}
+.ray4 /* Ray geven de stralen om de zon aan*/{
+    height:120px;
+    width:14px;
+   -webkit-transform: rotate(305deg);
+    top:30px;
+    left: 100px;
+}
+.ray5 /* Ray geven de stralen om de zon aan*/{
+    height:140px;
+    width:30px;
+   -webkit-transform: rotate(-15deg);
+    top:60px;
+    left: 40px;
+}
+.ray6 /* Ray geven de stralen om de zon aan*/{
+    height:90px;
+    width:50px;
+   -webkit-transform: rotate(30deg);
+    top:60px;
+    left: -40px;
+}
+.ray7 /* Ray geven de stralen om de zon aan*/{
+    height:180px;
+    width:10px;
+   -webkit-transform: rotate(70deg);
+    top:-35px;
+    left: -40px;
+}
+.ray8 /* Ray geven de stralen om de zon aan*/{
+    height:120px;
+    width:30px;
+   -webkit-transform: rotate(100deg);
+    top:-45px;
+    left:-90px;
+}
+.ray9 /* Ray geven de stralen om de zon aan*/{
+    height:80px;
+    width:10px;
+   -webkit-transform: rotate(120deg);
+    top:-65px;
+    left:-60px;
+}
+.ray10 /* Ray geven de stralen om de zon aan*/{
+    height:190px;
+    width:23px;
+   -webkit-transform: rotate(150deg);
+    top:-185px;
+    left: -60px;
+}
+
+
+@-webkit-keyframes ray_anim { 
+	0% { -webkit-transform: rotate(0deg); transform: rotate(0deg);}    
+    100% { -webkit-transform: rotate(360deg); transform: rotate(360deg);}
+}
+
+#sun2 /* Opmaak voor de ondergaande zon in tijdzone 12h-17h*/{ 
+  	position: absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	margin: auto;  
+	width:70px;
+	height:70px;
+	border-radius:50%;	
+	background:white;
+	opacity:0.9;			
+	box-shadow: 0px 0px 40px 15px white;  
+}
+
+/*Opmaak ster in tijdzone 18-24*/ 
+#star {
+	margin-top: 200px;
+	padding:30px 0 40px 0;
+	margin: 200px;
+	position: absolute;
+}
+
+/*Bovenste gedeelte van de ster*/ 
+#sterzes-up { /* Pijl naar boven*/
+  position:relative; top:-35px; left:30px;
+  width:0; height:0; font-size:0;
+  border-bottom:52px solid white;
+  border-left:30px solid transparent;
+  border-right:30px solid transparent;
+}
+
+#sterzes-down { /* Pijl naar beneden */
+  position:relative; top:35px; left:-30px;
+  width:0; height:0; font-size:0;
+  border-top:52px solid white;
+  border-left:30px solid transparent;
+  border-right:30px solid transparent;
+}
+
+/* Opmaak maan */
+#moon {
+	position: absolute;
+	margin-left:100px;
+	margin-top: 100px;
+	width: 180px;
+	height: 180px;
+	border-radius: 100px;
+	background-image: -ms-radial-gradient(10px 95px, 10px 9px, transparent 110px, rgb(245,245,245) 112px);
+	background-image: -webkit-radial-gradient(10px 95px, 10px 9px, transparent 110px, rgb(245,245,245) 112px);
+	background-image: -moz-radial-gradient(10px 95px, 10px 9px, transparent 110px, rgb(245,245,245) 112px);
+	background-image: -o-radial-gradient(10px 95px, 10px 9px, transparent 110px, rgb(245,245,245) 112px);
+}
+
+/*Mediaqueries 3 devices*/
+/*Phone & Tablet versie*/
+@media screen and (min-width: 400px) {
+
+	#text {
+		font-size: 5vw; /*Kleinste tekst*/
+	}
+
+	#sun {
+		margin-left: 15%;
+		margin-top: 5%;
+	}
+}
+
+/*Laptop versie */
+@media (min-width: 800px) {
+
+	#text {
+		font-size: 5vw;
+	}
+
+	#sun2 {
+		margin-top: 3%;
+		margin-left: 74%;
+	}
+}
+
+/*Desktop versie */
+@media (min-width: 1000px) {
+
+	#text {
+		font-size: 3vw;
+	}
+
+	#sun2 {
+		margin-top: 3%;
+		margin-left: 74%;
+	}
+}

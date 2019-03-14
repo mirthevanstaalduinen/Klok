@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Time SpaceX</title> <!--Title in menubalk--> 
+		<link type="text/css" href="styles/main.css" rel="stylesheet" /> <!--LET OP images zitten in css map--> 
+		<link href='//fonts.googleapis.com/css?family=Asap:400,700' rel='stylesheet' type='text/css'> <!--Verwijzing naar CSS--> 
+	</head>
+
+	<!--Function voor verandering van achtergrond --> 
+	<body class="body" onload="startTime()"> 
+		
+		<!--Container met klok en text-->
+		<div class="container">
+			<div id="time"></div> <!--Opmaak tijd--> 
+			<div id="text"></div> <!--Opmaak onderschrift--> 
+		</div>
+
+		<!--Container met (opgaande) zon voor tijdzone 6h-12h--> 
+		<div id="sun"> 
+			<div class="ray_box">
+		        <div class="ray ray1"></div> <!--Ray staat voor de zonnestralen om de zon--> 
+		        <div class="ray ray2"></div>
+		        <div class="ray ray3"></div>
+		        <div class="ray ray4"></div>
+		        <div class="ray ray5"></div>
+		        <div class="ray ray6"></div>
+		        <div class="ray ray7"></div>
+		        <div class="ray ray8"></div>
+		        <div class="ray ray9"></div>
+		        <div class="ray ray10"></div>
+		    </div>
+		</div>
+
+		<!--Container met (ondergaande) zon voor tijdzone 12h-17h--> 
+		<div id="sun2">
+			<div class="ray_box">
+		        <div class="ray ray1"></div> <!--Ray staat voor de zonnestralen om de zon--> 
+		        <div class="ray ray2"></div>
+		        <div class="ray ray3"></div>
+		        <div class="ray ray4"></div>
+		        <div class="ray ray5"></div>
+		        <div class="ray ray6"></div>
+		        <div class="ray ray7"></div>
+		        <div class="ray ray8"></div>
+		        <div class="ray ray9"></div>
+		        <div class="ray ray10"></div>
+		    </div>
+		</div>
+
+		<!--Container met star voor tijdzone 17h-24h--> 
+		<div id="star">
+			<span id="sterzes-up"></span>
+			<span id="sterzes-down"></span>
+		</div>
+		
+		<!--Container met star voor tijdzone 0h-5h--> 
+		<div>
+			<div id="moon"></div>
+		</div>
+		
+		<!--Script naar TweenMax--> 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+		
+		<!--Script naar externe JS bestand--> 
+		<script type="text/javascript" src="scripts/main.js"></script>
+
+	</body>
+
+</html>
